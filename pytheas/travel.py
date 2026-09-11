@@ -20,7 +20,7 @@ class Travel:
     """
     Base class for a Travel in Pytheas. 
     
-    Attr:
+    Attributes:
         boat (Boat): The boat that will travel.
         map (Map): The map over which the boat will travel.
         max_duration (int): The maximal duration of the trip (in hours).
@@ -220,6 +220,13 @@ class Travel:
         return GeoJSON_format
 
     def append_to_aggregates(self, output_path: str, radius_for_success: float = 5) -> None:
+        """
+        Save aggregate data for each simulation into a unique CSV file for the whole experiment.
+
+        Args:
+            output_path (str): filename for the output file.
+            radius_for_success (float): radius (in km) around target within which the boat needs to be to count it as a success in the aggregate file. Defaults to 5.
+        """
         if not os.path.exists(output_path):
             with open(output_path, 'w') as f:
                 f.write(f"Date,TimeOfDeparture,Duration,Distance,MeanSpeed,Success{radius_for_success}K,WavesAvg,WavesMax,HoursAbove2m,WindAvgSpeed,WindAvgDir,CurrentsAvgX,CurrentsAvgY\n")
