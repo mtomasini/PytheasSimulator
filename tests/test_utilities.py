@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-from pytheas import utilities
+from pytheas_simulator import utilities
 
 def test_distance_km():
     # numbers used as benchmark

@@ -1,1 +1,1 @@
-from pytheas import travel
+from pytheas_simulator import travel

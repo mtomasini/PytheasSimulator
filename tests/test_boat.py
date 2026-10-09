@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from pytheas import boat
+from pytheas_simulator import boat
 
 def test_calculate_displacement():
     
