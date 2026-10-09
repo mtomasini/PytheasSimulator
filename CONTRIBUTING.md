@@ -39,7 +39,7 @@ happy for any support that they can get.
 
 ### Write Documentation
 
-PytheasTest could always use more documentation, whether as
+The Pytheas Simulator could always use more documentation, whether as
 part of the official documentation, in docstrings, or even on the web in blog
 posts, articles, and such. Just
 [open an issue](https://github.com/mtomasini/PytheasSimulator/issues)
@@ -54,20 +54,21 @@ project and everybody has limited time.
 
 ## Get Started!
 
-Ready to contribute? Here's how to set up PytheasTest for
-local development.
+Ready to contribute? Here's how to set up Pytheas for
+local development. (IN PROGRESS)
 
 1. Fork the https://github.com/mtomasini/PytheasSimulator
    repository on GitHub.
 2. Clone your fork locally (*if you want to work locally*)
 
     ```shell
-    git clone git@github.com:your_name_here/pytheastest.git
+    git clone git@github.com:your_name_here/PytheasSimulator.git
     ```
+3. NOT YET READY: Set-up the data environment to work with Pytheas (Soon to come)
 
-3. [Install hatch](https://hatch.pypa.io/latest/install/).
+4. [Install hatch](https://hatch.pypa.io/latest/install/).
 
-4. Create a branch for local development using the default branch (typically `main`) as a starting point. Use `fix` or `feat` as a prefix for your branch name.
+5. Create a branch for local development using the default branch (typically `main`) as a starting point. Use `fix` or `feat` as a prefix for your branch name.
 
     ```shell
     git checkout main
@@ -76,14 +77,14 @@ local development.
 
     Now you can make your changes locally.
 
-5. When you're done making changes, apply the quality assurance tools and check
+6. When you're done making changes, apply the quality assurance tools and check
    that your changes pass our test suite. This is all included with tox
 
     ```shell
     hatch run test:run
     ```
 
-6. Commit your changes and push your branch to GitHub. Please use [semantic
+7. Commit your changes and push your branch to GitHub. Please use [semantic
    commit messages](https://www.conventionalcommits.org/).
 
     ```shell
@@ -92,7 +93,7 @@ local development.
     git push -u origin fix-name-of-your-bugfix
     ```
 
-7. Open the link displayed in the message when pushing your new branch in order
+8. Open the link displayed in the message when pushing your new branch in order
    to submit a pull request.
 
 ### Pull Request Guidelines

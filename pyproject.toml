@@ -13,7 +13,7 @@ requires = ["hatchling"]
 [project]
 name = "pytheas_simulator"
 # You can chose to use dynamic versioning with hatch or static where you add it manually.
-version = "1.5.0"
+version = "1.5.1"
 
 description = "A pytheas package to simulate ancient seafaring."
 authors = [
@@ -52,12 +52,12 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/mtomasini/PytheasSimulator"
+Homepage = "https://mtomasini.github.io/"
 "Source Code" = "https://github.com/mtomasini/PytheasSimulator"
 "Bug Tracker" = "https://github.com/mtomasini/PytheasSimulator/issues"
-Documentation = "https://mtomasini.github.io/https://mtomasini.github.io/PytheasSimulator/"
+Documentation = "https://mtomasini.github.io/PytheasSimulator/"
 # Note: update this url when you have published your package to pypi. (or delete it)
-Download = "https://pypi.org/project/PytheasSimulator/#files"
+Download = "https://pypi.org/project/pytheas_simulator/#files"
 
 [dependency-groups]
 dev = [
