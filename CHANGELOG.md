@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Package release on PyPI and Conda.
 - Updated for usage with Copernicus currents datasets with parameters `vxo` and `vyo`.
 
+
 ## [1.0.0] (May 2025)
 
 - First release for CAA Conference 2025, with full software but not working as package.

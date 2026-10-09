@@ -11,16 +11,16 @@ requires = ["hatchling"]
 ################################################################################
 
 [project]
-name = "pytheastest"
+name = "pytheas_simulator"
 # You can chose to use dynamic versioning with hatch or static where you add it manually.
-version = "0.1.0"
+version = "1.0.0"
 
 description = "A pytheas package to simulate ancient seafaring."
 authors = [
     { name = "Matteo Tomasini" },
 ]
 license = "MIT"
-requires-python = ">= 3.11" # Adjust based on the minimum version of Python that you support
+requires-python = ">= 3.9" # Adjust based on the minimum version of Python that you support
 readme = {"file" = "README.md", "content-type" = "text/markdown"}
 # Please consult https://pypi.org/classifiers/ for a full list.
 classifiers = [
@@ -30,23 +30,53 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3 :: Only",
 ]
-# TODO: add keywords
-keywords = []
-# TODO: add dependencies
-dependencies = []
+keywords = [
+    "ancient seafaring",
+    "ancient navigation",
+    "bronze age",
+    "neolithic",
+    "computational archaeology",
+    "agent-based modelling"
+]
+dependencies = [
+    "bottleneck",
+    "cartopy",
+    "dask",
+    "ephem>=4.2.1",
+    "geopy>=2.3.0",
+    "netCDF4",
+    "numpy>=1.23.5",
+    "opencv-python",
+    "pandas>=1.5.3",
+    "pip",
+    "xarray==2023.1.0",
+    "xoak"
+]
 
 [project.urls]
-Homepage = "https://github.com/mtomasini/pytheastest"
-"Source Code" = "https://github.com/mtomasini/pytheastest"
-"Bug Tracker" = "https://github.com/mtomasini/pytheastest/issues"
-Documentation = "https://github.com/mtomasini/pytheastest/blob/main/README.md"
+Homepage = "https://github.com/mtomasini/PytheasSimulator"
+"Source Code" = "https://github.com/mtomasini/PytheasSimulator"
+"Bug Tracker" = "https://github.com/mtomasini/PytheasSimulator/issues"
+Documentation = "https://github.com/mtomasini/PytheasSimulator/blob/main/README.md"
 # Note: update this url when you have published your package to pypi. (or delete it)
-Download = "https://pypi.org/project/pytheastest/#files"
+Download = "https://pypi.org/project/PytheasSimulator/#files"
 
 [dependency-groups]
 dev = [
     "hatch",
     "pre-commit",
+    "bottleneck",
+    "cartopy",
+    "dask",
+    "ephem>=4.2.1",
+    "geopy>=2.3.0",
+    "netCDF4",
+    "numpy>=1.23.5",
+    "opencv-python",
+    "pandas>=1.5.3",
+    "pip",
+    "xarray==2023.1.0",
+    "xoak"
 ]
 
 docs = [
@@ -94,8 +124,8 @@ markers = ["raises"] # Tells pytest to not raise a warning if you use @pytest.ma
 
 [tool.coverage.paths]
 source = [
-    "src/pytheastest",
-    "*/site-packages/pytheastest",
+    "src/pytheas_simulator",
+    "*/site-packages/pytheas_simulator",
 ]
 
 [tool.coverage.run]
