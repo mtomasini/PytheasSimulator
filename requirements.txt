@@ -5,7 +5,6 @@ ephem==4.1.4
 xarray==2023.1.0
 dask
 netCDF4
-bottleneck
 xoak==0.1.1
-cartopy
+Cartopy>=0.26.0
 opencv-python

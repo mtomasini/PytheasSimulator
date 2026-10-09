@@ -1,5 +1,5 @@
 import pandas as pd
-from src.pytheas_simulator.map import Map
+from pytheas_simulator.map import Map
 
 
 def local_test_load_map_data():
