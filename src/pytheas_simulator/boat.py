@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 from typing import Tuple, List
 
-import pytheas.utilities
+import pytheas_simulator.utilities
 
 class Boat:
     """
@@ -71,7 +71,7 @@ class Boat:
         
         self.trajectory = [(latitude, longitude)]
         self.distance = 0
-        self.bearing = pytheas.utilities.bearing_from_latlon([self.latitude, self.longitude], self.target)
+        self.bearing = pytheas_simulator.utilities.bearing_from_latlon([self.latitude, self.longitude], self.target)
         self.nominal_bearings = [self.bearing]
         self.modified_bearings = []
         self.current_target = self.copy_of_route.pop(0) if self.copy_of_route is not None else None # take first element of route as current_target
@@ -96,14 +96,14 @@ class Boat:
         """
 
         # find angle of wind compared to bearing of boat. 
-        effective_wind_angle = pytheas.utilities.difference_between_geographic_angles(bearing, current_winds[1])
+        effective_wind_angle = pytheas_simulator.utilities.difference_between_geographic_angles(bearing, current_winds[1])
         # wind_sign = np.sign(effective_wind_angle)
 
         # then adapt to the polar diagram (symmetric, only reported for positive angles, with negative angles having opposite sign results)
         abs_wind_angle = np.abs(effective_wind_angle)
 
         wind_speed = current_winds[0]
-        wind_speed_knots = pytheas.utilities.si_to_knots(wind_speed)
+        wind_speed_knots = pytheas_simulator.utilities.si_to_knots(wind_speed)
 
         # round angle to next 10 and speed to next 5
         if 0 <= abs_wind_angle <= 180:
@@ -119,7 +119,7 @@ class Boat:
             raise ValueError(f"Wind speed is negative ({wind_speed} m/s)")
 
         speed_in_knots = self.speed_polar_diagram[str(rounded_speed)][rounded_angle]
-        speed = pytheas.utilities.knots_to_si(speed_in_knots)
+        speed = pytheas_simulator.utilities.knots_to_si(speed_in_knots)
 
         return speed
     
@@ -141,14 +141,14 @@ class Boat:
         """
 
         # find angle of wind compared to bearing of boat. 
-        effective_wind_angle = pytheas.utilities.difference_between_geographic_angles(bearing, current_winds[1])
+        effective_wind_angle = pytheas_simulator.utilities.difference_between_geographic_angles(bearing, current_winds[1])
         wind_sign = np.sign(effective_wind_angle)
 
         # then adapt to the polar diagram (symmetric, only reported for positive angles, with negative angles having opposite sign results)
         abs_wind_angle = np.abs(effective_wind_angle)
 
         wind_speed = current_winds[0]
-        wind_speed_knots = pytheas.utilities.si_to_knots(wind_speed)
+        wind_speed_knots = pytheas_simulator.utilities.si_to_knots(wind_speed)
 
         # round angle to next 10 and speed to next 5
         if 0 <= abs_wind_angle <= 180:
@@ -184,7 +184,7 @@ class Boat:
         paddling_speed = self.speed_due_to_wind(local_winds, bearing)
         leeway_angle = self.leeway_due_to_wind(local_winds, bearing)
         effective_direction = bearing - leeway_angle
-        movement_angle_dxy = pytheas.utilities.geographic_angle_to_xy(effective_direction)
+        movement_angle_dxy = pytheas_simulator.utilities.geographic_angle_to_xy(effective_direction)
         
         # paddling_speed is in m/s, timestep is in minutes
         timestep_seconds = timestep * 60.
@@ -217,8 +217,8 @@ class Boat:
         if self.route_to_take is not None:
             # 1) if current target is at least X km away from boat, don't update the target
             # 2) else, update to new current target
-            if pytheas.utilities.distance_km(self.trajectory[-1], self.current_target) > accepted_distance_from_target:
-                self.bearing = pytheas.utilities.bearing_from_latlon([self.latitude, self.longitude], self.current_target)
+            if pytheas_simulator.utilities.distance_km(self.trajectory[-1], self.current_target) > accepted_distance_from_target:
+                self.bearing = pytheas_simulator.utilities.bearing_from_latlon([self.latitude, self.longitude], self.current_target)
                 self.nominal_bearings.append(self.bearing)
             else:
                 if len(self.copy_of_route) > 0:
@@ -226,10 +226,10 @@ class Boat:
                 else:
                     self.current_target = self.target
 
-                self.bearing = pytheas.utilities.bearing_from_latlon([self.latitude, self.longitude], self.current_target)
+                self.bearing = pytheas_simulator.utilities.bearing_from_latlon([self.latitude, self.longitude], self.current_target)
                 self.nominal_bearings.append(self.bearing)
         else:
-            self.bearing = pytheas.utilities.bearing_from_latlon([self.latitude, self.longitude], self.target)
+            self.bearing = pytheas_simulator.utilities.bearing_from_latlon([self.latitude, self.longitude], self.target)
             self.nominal_bearings.append(self.bearing)
         
         # if there is land ahead stir away, but only if we're not close to the target! If we're less than 20 km away from the target, let hit either target or land.
@@ -262,13 +262,13 @@ class Boat:
             pass
         
         # next, add uncertainty to the bearing and split the bearing into x and y
-        bearing_with_uncertainty = self.bearing + pytheas.utilities.angle_uncertainty(self.uncertainty_sigma)
+        bearing_with_uncertainty = self.bearing + pytheas_simulator.utilities.angle_uncertainty(self.uncertainty_sigma)
 
         self.modified_bearings.append(bearing_with_uncertainty)
         
         if self.speed_polar_diagram is not None:
             displacement_xy = self.calculate_displacement(local_winds, local_currents, bearing_with_uncertainty, timestep)
-            direction_of_displacement = pytheas.utilities.direction_from_displacement(displacement_xy)
+            direction_of_displacement = pytheas_simulator.utilities.direction_from_displacement(displacement_xy)
             distance_of_displacement = np.linalg.norm(displacement_xy)
             
             new_coordinates = gp.distance(distance_of_displacement).destination((self.latitude, self.longitude), bearing = direction_of_displacement)

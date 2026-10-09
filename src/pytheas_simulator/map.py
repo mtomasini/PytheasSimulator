@@ -11,8 +11,8 @@ import pandas as pd
 from typing import Dict, List, Optional, Tuple
 import xarray as xr
 
-from pytheas import search
-from pytheas import utilities
+from pytheas_simulator import search
+from pytheas_simulator import utilities
 
 
 class Map:
