@@ -7,9 +7,9 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Pytheas simulator'
-copyright = '2025, Matteo Tomasini'
+copyright = '2026, Matteo Tomasini'
 author = 'Matteo Tomasini'
-release = '1.0.0'
+release = '1.5.2'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
