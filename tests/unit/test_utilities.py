@@ -113,3 +113,12 @@ def test_is_it_night():
     test_position_2 = [46.1670, 8.7943]
     is_night_2 = utilities.is_it_night(test_date_2, test_position_2)
     assert is_night_2 == True
+
+
+def test_bounding_box_from_points():
+    test_departure = [50, 10]
+    test_arrival = [49, 15]
+    calculated_box = utilities.bounding_box_from_points(test_departure, test_arrival)
+    assert calculated_box[0] == 48.0
+    assert len(calculated_box) == 4
+    assert calculated_box[3] ==  16

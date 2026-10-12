@@ -2,3 +2,7 @@
 
 cdsapi
 copernicusmarine
+gc
+pandas
+pathlib
+pytheas_simulator

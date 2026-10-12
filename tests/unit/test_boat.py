@@ -4,8 +4,8 @@ from pytheas_simulator import boat
 
 def test_calculate_displacement():
     
-    SPEED_POLAR_DIAGRAM_PATH = './configs/hjortspring_speeds_16pad_3000kg_44cad_75oars.txt'
-    LEEWAY_POLAR_DIAGRAM_PATH = './configs/hjortspring_leeway_16pad_3000kg_44cad_75oars.txt'
+    SPEED_POLAR_DIAGRAM_PATH = './polar_diagrams/hjortspring_speeds_16pad_3000kg_44cad_75oars.txt'
+    LEEWAY_POLAR_DIAGRAM_PATH = './polar_diagrams/hjortspring_leeway_16pad_3000kg_44cad_75oars.txt'
     speed_polar_diagram = pd.read_csv(SPEED_POLAR_DIAGRAM_PATH, sep="\t", index_col=0)
     leeway_polar_diagram = pd.read_csv(LEEWAY_POLAR_DIAGRAM_PATH, sep="\t", index_col=0)
     timestep = 15
@@ -87,8 +87,8 @@ def test_generic_displacement():
     pass
 
 def test_move_boat():
-    SPEED_POLAR_DIAGRAM_PATH = './configs/hjortspring_speeds_16pad_3000kg_44cad_75oars.txt'
-    LEEWAY_POLAR_DIAGRAM_PATH = './configs/hjortspring_leeway_16pad_3000kg_44cad_75oars.txt'
+    SPEED_POLAR_DIAGRAM_PATH = './polar_diagrams/hjortspring_speeds_16pad_3000kg_44cad_75oars.txt'
+    LEEWAY_POLAR_DIAGRAM_PATH = './polar_diagrams/hjortspring_leeway_16pad_3000kg_44cad_75oars.txt'
     speed_polar_diagram = pd.read_csv(SPEED_POLAR_DIAGRAM_PATH, sep="\t", index_col=0)
     leeway_polar_diagram = pd.read_csv(LEEWAY_POLAR_DIAGRAM_PATH, sep="\t", index_col=0)
     timestep = 15

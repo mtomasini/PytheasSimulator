@@ -33,8 +33,8 @@ class Map:
     
     def __init__(self, 
                  bounding_box: Tuple[float, float, float, float], 
-                 earliest_time: pd.Timestamp, 
-                 latest_time: pd.Timestamp,
+                 earliest_time: str, 
+                 latest_time: str,
                  wind_data_path: str, 
                  current_data_path: str, 
                  waves_data_path: str):
@@ -49,8 +49,8 @@ class Map:
             waves_data_path (str): Folder where the waves data are stored.
         """
         self.bounding_box = bounding_box
-        self.earliest_time = earliest_time
-        self.latest_time = latest_time
+        self.earliest_time = pd.Timestamp(earliest_time) # initialized at 00:00
+        self.latest_time = pd.Timestamp(latest_time) + pd.Timedelta(23, unit="H") # initizilizes at 23:00
         self.wind_path = wind_data_path
         self.current_path = current_data_path
         self.waves_path = waves_data_path
