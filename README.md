@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23264745.svg)](https://doi.org/10.5281/zenodo.23264745)
+
 # Pytheas - a flexible and agile simulator of ancient seafaring
 
 Current research in the [Maritime Encounters project](https://www.gu.se/en/research/maritime-encounters), at the University of Gothenburg, has been led by using and developing the software [Voyager](https://github.com/mtomasini/voyager). While this software is very complete and thorough, it can be difficult to maintain and develop due to the many components that it uses. I decided to write a version of the code that is more flexible and less complex to use, based on my own experiences in simulating seafaring in ancient times. This software is an improvement on the work by Alvaro Montenegro (Ohio State University) and Victor Wåhlstrand Skärström (University of Gothenburg, now at Chalmers University of Technology). The code is written in Python.
