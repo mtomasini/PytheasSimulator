@@ -1,4 +1,5 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23264745.svg)](https://doi.org/10.5281/zenodo.23264745)
+![PyPI License](https://img.shields.io/pypi/l/pytheas_simulator)
 
 # Pytheas - a flexible and agile simulator of ancient seafaring
 
