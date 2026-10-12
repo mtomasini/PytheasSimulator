@@ -5,7 +5,12 @@
 
 ./configs
 
+
+### my own stuff
 testing_notebook.ipynb
+tutorial/simulation_output/Aggregates/*
+tutorial/simulation_output/Outputs/*
+.micromamba
 
 docs/build/
 

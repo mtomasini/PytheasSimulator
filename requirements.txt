@@ -1,10 +1,4 @@
-geopy==2.5.0
-numpy==1.23.5
-pandas==1.5.3
-ephem==4.1.4
-xarray==2023.1.0
-dask
-netCDF4
-xoak==0.1.1
-Cartopy>=0.25.0
-opencv-python
+
+
+cdsapi
+copernicusmarine
