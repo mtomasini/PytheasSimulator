@@ -8,12 +8,25 @@ Current research in the [Maritime Encounters project](https://www.gu.se/en/resea
 
 The package is now available on PyPI and can be installed via
 
-```
+```bash
 python -m pip install pytheas_simulator
 ```
 
-In the coming days I will upload a tutorial to build a minimally working example, including how to download data in the format to work with Pytheas.
+## Tutorial
 
+To use the tutorial on this repository (in the folder `-/tutorial/`), installing `pyhteas_simulator` will be enough. All the necessary packages will be downloaded along with it. You can easily set up an environment using your favorite virtual environment manager, e.g.
+
+```bash
+mamba create -n pytheasenvironment python==3.14 
+mamba activate pytheasenvironment
+python -m pip install pytheas_simulator
+```
+
+and all should be installed. I wrote two types of tutorial: 
+- `./tutorial/vignette.ipynb`: a Jupyter notebook explaining step by step how to build a simulation
+- `./tutorial/simulation.py` : a script showing how to launch a larger simulation with multiple dates
+
+For the tutorial I made available data from the Copernicus Data Center, using July 1996 as an example. Additionally I made available scripts (`/.tutorial/data/import_currents-waves.py` and `/.tutorial/data/import_winds.py`) so that you can download data directly on your computer from Copernicus (you will need a login for this, please see the tutorial notebook, or find information on Copernicus website directly). 
 
 ## Development philosophy
 

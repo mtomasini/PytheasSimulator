@@ -4,10 +4,10 @@ from pytheas_simulator import boat
 
 def test_calculate_displacement():
     
-    SPEED_POLAR_DIAGRAM_PATH = './polar_diagrams/hjortspring_speeds_16pad_3000kg_44cad_75oars.txt'
-    LEEWAY_POLAR_DIAGRAM_PATH = './polar_diagrams/hjortspring_leeway_16pad_3000kg_44cad_75oars.txt'
-    speed_polar_diagram = pd.read_csv(SPEED_POLAR_DIAGRAM_PATH, sep="\t", index_col=0)
-    leeway_polar_diagram = pd.read_csv(LEEWAY_POLAR_DIAGRAM_PATH, sep="\t", index_col=0)
+    SPEED_POLAR_DIAGRAM_PATH = './polar_diagrams/hjortspring_speeds_16pad_3000kg_44cad_75oars_2oars.csv'
+    LEEWAY_POLAR_DIAGRAM_PATH = './polar_diagrams/hjortspring_leeway_empty_diagram.csv'
+    speed_polar_diagram = pd.read_csv(SPEED_POLAR_DIAGRAM_PATH, sep=",", index_col=0)
+    leeway_polar_diagram = pd.read_csv(LEEWAY_POLAR_DIAGRAM_PATH, sep=",", index_col=0)
     timestep = 15
     
     test_boat = boat.Boat(
@@ -79,18 +79,18 @@ def test_calculate_displacement():
     currents = np.array([-0.5, 0.5])
     bearing = 0
     displacement = test_boat.calculate_displacement(winds, currents, bearing, timestep)   
-    assert displacement[0] - (-0.6083) < 1e-3
-    assert displacement[1] - 0.8850 < 1e-3
+    assert displacement[0] - (-0.45) < 1e-3
+    assert displacement[1] - 0.913 < 1e-3
     
 
 def test_generic_displacement():
     pass
 
 def test_move_boat():
-    SPEED_POLAR_DIAGRAM_PATH = './polar_diagrams/hjortspring_speeds_16pad_3000kg_44cad_75oars.txt'
-    LEEWAY_POLAR_DIAGRAM_PATH = './polar_diagrams/hjortspring_leeway_16pad_3000kg_44cad_75oars.txt'
-    speed_polar_diagram = pd.read_csv(SPEED_POLAR_DIAGRAM_PATH, sep="\t", index_col=0)
-    leeway_polar_diagram = pd.read_csv(LEEWAY_POLAR_DIAGRAM_PATH, sep="\t", index_col=0)
+    SPEED_POLAR_DIAGRAM_PATH = './polar_diagrams/hjortspring_speeds_16pad_3000kg_44cad_75oars_2oars.csv'
+    LEEWAY_POLAR_DIAGRAM_PATH = './polar_diagrams/hjortspring_leeway_empty_diagram.csv'
+    speed_polar_diagram = pd.read_csv(SPEED_POLAR_DIAGRAM_PATH, sep=",", index_col=0)
+    leeway_polar_diagram = pd.read_csv(LEEWAY_POLAR_DIAGRAM_PATH, sep=",", index_col=0)
     timestep = 15
     
     test_boat = boat.Boat(
