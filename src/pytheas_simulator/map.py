@@ -21,8 +21,8 @@ class Map:
     
     Attributes:
         bounding_box (List[float, float, float, float]): Bounding box including [min_latitude, min_longitude, max_latitude, max_longitude].
-        earliest_time (pd.Timestamp): Earliest time included in the Map dataset.
-        latest_time (pd.Timestamp): Latest time included in the Map dataset.
+        earliest_time (str): Earliest time included in the Map dataset.
+        latest_time (str): Latest time included in the Map dataset.
         wind_path (str): Folder where the wind data are stored.
         current_path (str): Folder where the current data are stored.
         waves_path (str): Folder where the waves data are stored.
@@ -42,8 +42,8 @@ class Map:
 
         Args:
             bounding_box (List[float, float, float, float]): Bounding box including [min_latitude, min_longitude, max_latitude, max_longitude].
-            earliest_time (pd.Timestamp): Earliest time included in the Map dataset.
-            latest_time (pd.Timestamp): Latest time included in the Map dataset.
+            earliest_time (str): Earliest time included in the Map dataset.
+            latest_time (str): Latest time included in the Map dataset.
             wind_data_path (str): Folder where the wind data are stored.
             current_data_path (str): Folder where the current data are stored.
             waves_data_path (str): Folder where the waves data are stored.
