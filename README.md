@@ -1,8 +1,9 @@
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23264745.svg)](https://doi.org/10.5281/zenodo.23264745)
 ![PyPI License](https://img.shields.io/pypi/l/pytheas_simulator)
 ![GitHub last commit](https://img.shields.io/github/last-commit/mtomasini/PytheasSimulator)
 
-# Pytheas - a flexible and agile simulator of ancient seafaring
+# Pytheas Simulator - a flexible and agile simulator of ancient seafaring
 
 Current research in the [Maritime Encounters project](https://www.gu.se/en/research/maritime-encounters), at the University of Gothenburg, has been led by using and developing the software [Voyager](https://github.com/mtomasini/voyager). While this software is very complete and thorough, it can be difficult to maintain and develop due to the many components that it uses. I decided to write a version of the code that is more flexible and less complex to use, based on my own experiences in simulating seafaring in ancient times. This software is an improvement on the work by Alvaro Montenegro (Ohio State University) and Victor Wåhlstrand Skärström (University of Gothenburg, now at Chalmers University of Technology). The code is written in Python.
 
@@ -14,7 +15,7 @@ python -m pip install pytheas_simulator
 
 ## Tutorial
 
-To use the tutorial on this repository (in the folder `-/tutorial/`), installing `pyhteas_simulator` will be enough. All the necessary packages will be downloaded along with it. You can easily set up an environment using your favorite virtual environment manager, e.g.
+To use the tutorial on this repository (in the folder `./tutorial/`), it will be enough to install `pyhteas_simulator`, after downloading this repository on your computer. When installing the package, all the dependencies will be downloaded along with it. You can easily set up an environment using your favorite virtual environment manager, e.g.
 
 ```bash
 mamba create -n pytheasenvironment python==3.14 
@@ -22,7 +23,7 @@ mamba activate pytheasenvironment
 python -m pip install pytheas_simulator
 ```
 
-and all should be installed. I wrote two types of tutorial: 
+and all should be ready to go. I wrote two types of tutorial: 
 - `./tutorial/vignette.ipynb`: a Jupyter notebook explaining step by step how to build a simulation
 - `./tutorial/simulation.py` : a script showing how to launch a larger simulation with multiple dates
 
