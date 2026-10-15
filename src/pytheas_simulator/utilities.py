@@ -176,7 +176,12 @@ def calculate_start_of_day(day : str, position: Tuple[float, float], type_of_twi
     else:
         raise ValueError("type_of_twilight needs to be among 'civil', 'nautical', 'astronomical' or 'sun'")
 
-    morning_twilight = ephem.localtime(earth.next_rising(sun))
+    try:
+        morning_twilight = ephem.localtime(earth.next_rising(sun))
+    except ephem.AlwaysUpError:
+        morning_twilight = f"{day}T00:00:00"
+    except ephem.NeverUpError:
+        morning_twilight = f"{day}T00:00:00"
 
     return pd.Timestamp(morning_twilight)
 
@@ -213,8 +218,13 @@ def calculate_end_of_day(day : str, position: Tuple[float, float], type_of_twili
         pass
     else:
         raise ValueError("type_of_twilight needs to be among 'civil', 'nautical', 'astronomical' or 'sun'")
-
-    evening_twilight = ephem.localtime(earth.next_setting(sun))
+    
+    try:
+        evening_twilight = ephem.localtime(earth.next_setting(sun))
+    except ephem.AlwaysUpError:
+        evening_twilight = f"{day}T23:59:59"
+    except ephem.NeverUpError:
+        evening_twilight = f"{day}T23:59:59"
 
     return pd.Timestamp(evening_twilight)
 
