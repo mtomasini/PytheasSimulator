@@ -132,6 +132,11 @@ class Map:
         dataset = xr.open_dataset(path)
         dataset.close()
 
+        try:
+            dataset.rename_dims({"valid_time" : "time"})
+        except:
+            pass
+
         # if values are from 0 to 360, convert to -180 to 180
         if dataset.longitude.values.max() >= 180.0:
             dataset.coords['longitude'] = (dataset.coords['longitude'] + 180) % 360 - 180
