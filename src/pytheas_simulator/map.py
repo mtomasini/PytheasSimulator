@@ -80,6 +80,13 @@ class Map:
         
         dataset = xr.open_dataset(path)
         dataset.close()
+
+        try:        
+            dataset = dataset.rename_dims({"vxo" : "uo"})
+            dataset = dataset.rename_dims({"vyo" : "vo"})
+        except:
+            pass
+
         
         # if values are from 0 to 360, convert to -180 to 180
         if dataset.longitude.values.min() >= 180.0:
