@@ -133,7 +133,7 @@ class Map:
         dataset.close()
 
         try:
-            dataset.rename_dims({"valid_time" : "time"})
+            dataset = dataset.rename_dims({"valid_time" : "time"})
         except:
             pass
 
