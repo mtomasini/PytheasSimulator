@@ -227,11 +227,11 @@ class Map:
     
     
     
-    def return_local_winds(self, location: np.ndarray, time: pd.Timestamp, radius: float = 0.05) -> np.ndarray:
+    def return_local_winds(self, location: np.ndarray, time: pd.Timestamp, radius: float = 0.1) -> np.ndarray:
         """
-        Return wind speed and direction given a location and a time. Winds are measured in a square of +/-0.05 degrees around the location, and an average of all the values found
+        Return wind speed and direction given a location and a time. Winds are measured in a square of +/-0.1 degrees around the location, and an average of all the values found
         in that radius is output. The radius is chosen based on the grid size for the CERRA dataset (~2 x 2 km).
-        The value of 0.05 has been found with trial and error.
+        The value of 0.1 has been found with trial and error.
 
         Args:
             location (np.ndarray): Array of latitude and longitude of a location.
