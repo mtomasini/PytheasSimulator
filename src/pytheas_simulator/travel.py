@@ -100,7 +100,10 @@ class Travel:
         
         self.encountered_winds.append(wind_here_and_now.tolist())
         self.encountered_currents.append(current_here_and_now.tolist())
-        self.encountered_waves.append(waves_here_and_now.tolist())
+        try:
+            self.encountered_waves.append(waves_here_and_now.tolist())
+        except:
+            self.encountered_waves.append(np.nan)
         
         if self.night_travel:
             sunrise = calculate_start_of_day(self.current_time.strftime('%Y-%m-%d'), current_location, type_of_twilight=self.twilight_of_stops)
