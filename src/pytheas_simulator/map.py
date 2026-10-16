@@ -82,11 +82,15 @@ class Map:
         dataset.close()
 
         try:        
-            dataset = dataset.rename_dims({"vxo" : "uo"})
-            dataset = dataset.rename_dims({"vyo" : "vo"})
+            dataset = dataset.rename_vars({"vxo" : "uo"})
+            dataset = dataset.rename_vars({"vyo" : "vo"})
         except:
             pass
 
+        try:
+            dataset = dataset.squeeze('depth')
+        except:
+            pass
         
         # if values are from 0 to 360, convert to -180 to 180
         if dataset.longitude.values.min() >= 180.0:
