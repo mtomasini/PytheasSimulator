@@ -14,6 +14,7 @@ Welcome to Pytheas simulator's documentation!
    modules
    testing.md
    author.md
+   api
 
 
 

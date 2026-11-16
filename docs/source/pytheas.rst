@@ -7,7 +7,7 @@ Submodules
 pytheas.boat module
 -------------------
 
-.. automodule:: boat
+.. automodule:: pytheas_simulator.boat
    :members:
    :undoc-members:
    :show-inheritance:
@@ -15,7 +15,7 @@ pytheas.boat module
 pytheas.map module
 ------------------
 
-.. automodule:: pytheas.map
+.. automodule:: pytheas_simulator.map
    :members:
    :undoc-members:
    :show-inheritance:
@@ -23,7 +23,7 @@ pytheas.map module
 pytheas.travel module
 ---------------------
 
-.. automodule:: pytheas.travel
+.. automodule:: pytheas_simulator.travel
    :members:
    :undoc-members:
    :show-inheritance:
@@ -31,7 +31,7 @@ pytheas.travel module
 pytheas.search module
 ---------------------
 
-.. automodule:: pytheas.search
+.. automodule:: pytheas_simulator.search
    :members:
    :undoc-members:
    :show-inheritance:
@@ -39,7 +39,7 @@ pytheas.search module
 pytheas.utilities module
 ------------------------
 
-.. automodule:: pytheas.utilities
+.. automodule:: pytheas_simulator.utilities
    :members:
    :undoc-members:
    :show-inheritance:
@@ -47,7 +47,7 @@ pytheas.utilities module
 Module contents
 ---------------
 
-.. automodule:: pytheas
+.. automodule:: pytheas_simulator
    :members:
    :undoc-members:
    :show-inheritance:
