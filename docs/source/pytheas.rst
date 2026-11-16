@@ -7,7 +7,7 @@ Submodules
 pytheas.boat module
 -------------------
 
-.. automodule:: pytheas.boat
+.. automodule:: boat
    :members:
    :undoc-members:
    :show-inheritance:
