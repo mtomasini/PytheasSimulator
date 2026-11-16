@@ -16,7 +16,7 @@ release = '1.5.2'
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath(os.path.join("..", "..")))
+sys.path.insert(0, os.path.abspath("../../src"))
 
 extensions = ['myst_parser', 'sphinx.ext.autodoc', 'sphinx.ext.napoleon']
 
@@ -28,5 +28,5 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'pydata_sphinx_theme'
+html_theme = 'pyramid' #'pydata_sphinx_theme'
 html_static_path = ['_static']
